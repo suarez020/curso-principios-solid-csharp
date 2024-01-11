@@ -12,10 +12,12 @@ namespace Liskov
             HoursWorked = hoursWorked;
         }  
 
-        public virtual decimal CalculateSalary (bool IsFullTime)
-        {   
+        public virtual decimal CalculateSalary (bool IsFullTime)//puede que cresca y hayan otro tipo de contrato 
+        {                                                      // cada clase lo deberia hacer por separado 
             decimal hourValue = IsFullTime ? 50 : 40;
             return hourValue * (HoursWorked + ExtraHours);
         } 
     }
 }
+
+// el texto dice solo el empleado fulltime tiene derecho a horas extras 
